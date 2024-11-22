@@ -48,7 +48,8 @@ function addToProfile(
 
   let curVal = startVal
   let frameInfo = infos.get(tree.id)!
-
+  if (frameInfo === undefined)
+    return startVal
   profile.enterFrame(frameInfo, curVal)
 
   for (let child of tree.children) {
